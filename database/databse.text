@@ -1,0 +1,96 @@
+DDL Data define language
+Create DATABASE
+Create DATABASE Jeet
+
+DROP DATABASE 
+DROP DATABASE parth;
+
+Datatype
+CHAR(size)0- 255 a-z
+
+VARCHAR(size) 0-65000
+
+TEXT adress
+
+ENUM(value1,value2,value3) 65000 value
+
+SET(value1,value2,value3) 64 value
+
+Number datatype 
+INT() id salary 
+Boolean() 0/1 
+Float() price 19.40
+Double()
+
+Date datatype
+DATE() 1000-01-01
+DATETIME() yyyy mm dd hh mm ss
+TIMETamp() YYYY-MM-DD hh:mm:ss
+TIME() hh mm ss
+YEAR() yyyy
+
+CONSTRAINTS 
+Constraints are used to limit the type of data that can go into a table. 
+
+
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY -Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+FOREIGN KEY -A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+CHECK - Ensures that the values in a column satisfies a specific condition
+
+If you define a CHECK constraint on a column it will allow only certain values for this column.
+
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+
+DEFAULT - Sets a default value for a column if no value is specified
+The DEFAULT constraint is used to set a default value for a column.
+
+
+AUTO_INCREMENT Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+
+   CREATE TABLE
+   CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    product_id INT not null ,
+    quantity_sold INT check(quantity_sold >0),
+    sale_date DATE,
+    total_price DECIMAL(10, 2)
+);
+
+
+   CREATE TABLE
+   CREATE TABLE student (
+   Id INT PRIMARY KEY,
+   Name varchar(100) not null 
+    
+);
+
+add column 
+ALTER TABLE student ADD Sub varchar(100);
+change column name 
+ALTER TABLE student CHANGE city City varchar(100);
+drop column 
+ALTER TABLE student DROP COLUMN City;
+
+
+DML Data manipulation language
+insert data 
+INSERT INTO student() VALUES(1,"Krish","Maths");
+
+multiple data 
+INSERT INTO student() VALUES(2,"Krisha","Maths"), (3,"Krishan","Eng"), (4,"Kria","PT"), (5,"Kinal","Maths");
+
+UPDATE data
+UPDATE student SET Sub="S.S", Name="KRISHA" WHERE id=2;
+
+DELETE data ;
+DELETE FROM Student WHERE id=5;
+
+
+DROP TABLE student;
+TRUNCATE TABLE orders;
