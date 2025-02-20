@@ -1,0 +1,4 @@
+Sub query
+Select * from student where mark>(Select AVG(mark) from student)
+Select * from student where rollno>(Select * from student where rollno%2=0)
+Select MAX() from(Select * from student where city=”surat”) as temp

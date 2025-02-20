@@ -1,0 +1,21 @@
+IS NULL
+SELECT * From student WHERE name IS NULL;
+NOT NULL
+SELECT * From student WHERE name NOT NULL;
+
+LIMIT OFFSET
+SELECT * From student WHERE name=”parth” LIMIT 3;
+SELECT * From student  WHERE name=”parth  Order BY Country ASC LIMIT 3;
+SELECT * From student  WHERE name=”parth  Order BY Country ASC LIMIT 3(offset) ,3(LIMIT);
+
+
+ Episode-7
+Function COUNT SUM MIN MAX AVG 
+
+SELECT COUNT(name) From student
+SELECT COUNT(*) From student
+SELECT COUNT(DISTINCT  city) From student
+SELECT SUM(mark) From student
+SELECT MIN (mark) From student
+SELECT MIX (mark) From student
+SELECT Avg(mark) From student

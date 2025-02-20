@@ -1,0 +1,68 @@
+DQL-Data query language
+SELECT
+SELECT * From student;
+SELECT id,name,age From student;
+SELECT * From student where age>18;
+
+SELECT DISTINCT :statement is used to return only different values.
+
+SELECT DISTINCT Country FROM Customers;
+
+ WHERE clause is used to filter records.
+
+SELECT * FROM student WHERE age=18;
+
+ORDER BY
+SELECT * From student  Order BY Country ASC;
+SELECT * From student Order BY Country DESC;
+
+AND
+SELECT * From student where age>=18 and age<=21;
+SELECT * From student where age>18 and age<21 and gender=’female’;
+
+OR
+SELECT * From student where age=18 or age=21 or age=25;
+SELECT * From student where age=18 or age=21;
+SELECT * From student where (age=18 or age=21) and city=surat;
+
+NOT
+SELECT * From student where NOT age=18 ;
+SELECT * From student where (NOT age=18 or age=21) and city=surat;
+SELECT * FROM Customers LIMIT 3;
+
+Aliases
+SELECT CustomerID AS ID FROM Customers;
+
+IN
+SELECT * From student where  age IN (18,20,25 ,21)
+SELECT * From student where  city NOT IN (“Surat”,”Baroda”,”Tapi”);
+
+BETWEEN 
+
+SELECT * From student where  age  BETWEEN 20 AND 25
+SELECT * From student where  CIty NOT BETWEEN “Surat” AND “Baroda”
+
+GROUP BY
+The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+GROUP BY Country:
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+
+Episode-5
+
+HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;

@@ -1,0 +1,22 @@
+Like 
+SELECT * From student where  name like %s
+The percent sign (%) represents zero, one, or multiple characters
+The underscore sign (_) represents one, single character
+
+
+start with "a"
+SELECT * From student where  name like ‘s%’
+End with "a"
+SELECT * From student where  name like %a
+Any position value
+SELECT * From student where  name like %a%
+any values that have "r" in the second position
+SELECT * From student where  name like _a%
+start with "a" and are at least 2 characters in length
+SELECT * From student where  name like a_%
+start with "a" and are at least 3 characters in length
+SELECT * From student where  name like a__%
+start with "s" and ends with "a"
+SELECT * From student where  name like s%a
+ends with "y"and are at least 2 characters in length
+SELECT * From student where  name like %_y;
